@@ -51,7 +51,6 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
-    // --- NUEVAS DEPENDENCIAS ---
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
@@ -59,23 +58,18 @@ dependencies {
 
     // Hilt
     implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.hilt.work)
-    ksp(libs.hilt.compiler)
     ksp(libs.androidx.hilt.compiler)
 
-    // Glance & WorkManager & Coil
+    // WorkManager
+    implementation(libs.androidx.work.runtime.ktx)
+
+    // Glance
     implementation(libs.androidx.glance.appwidget)
     implementation(libs.androidx.glance.material3)
-    implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.coil.compose)
 
-    // Testing
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    // Coil
+    implementation(libs.coil.compose)
 }
